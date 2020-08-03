@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('logout', 'Auth\LoginController@logout');
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/home', 'DashboardController@home')->name('dashbaord');
