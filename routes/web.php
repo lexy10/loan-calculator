@@ -29,7 +29,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/calculate-loan', 'DashboardController@calculateLoan')->name('calculate_loan');
 
-    Route::get('/calculate-loan', 'DashboardController@loadRepaymentResult')->name('load_repayment');
+    Route::get('/calculate-loan', function (){
+        return redirect()->route('dashbaord');
+    })->name('load_repayment');
 
 });
 
